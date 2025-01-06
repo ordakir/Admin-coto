@@ -3,8 +3,8 @@
     {
       "id": 0,
       "name": "COTOS",
-      "x": -482,
-      "y": -247,
+      "x": -715,
+      "y": -365,
       "fields": [
         {
           "name": "coto_id",
@@ -80,12 +80,12 @@
     {
       "id": 1,
       "name": "UNIDAD_HAB",
-      "x": -150,
-      "y": -255,
+      "x": -171,
+      "y": -340,
       "fields": [
         {
           "name": "uhab_id",
-          "type": "TINYTEXT",
+          "type": "TINYINT",
           "default": "",
           "check": "",
           "primary": true,
@@ -94,7 +94,8 @@
           "increment": false,
           "comment": "",
           "id": 0,
-          "size": 65535
+          "size": "",
+          "values": []
         },
         {
           "name": "uhab_coto",
@@ -150,6 +151,20 @@
           "id": 4,
           "size": "",
           "values": []
+        },
+        {
+          "name": "coto_id",
+          "type": "TINYINT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "id": 5,
+          "size": "",
+          "values": []
         }
       ],
       "comment": "",
@@ -160,8 +175,8 @@
     {
       "id": 2,
       "name": "USUARIOS",
-      "x": -469,
-      "y": 21,
+      "x": -651,
+      "y": 112,
       "fields": [
         {
           "name": "us_id",
@@ -189,7 +204,7 @@
           "size": 65535
         },
         {
-          "name": "us_uhab_num",
+          "name": "us_uhab_id",
           "type": "TINYTEXT",
           "default": "",
           "check": "",
@@ -237,8 +252,8 @@
     {
       "id": 3,
       "name": "PAGOS",
-      "x": 217,
-      "y": -250,
+      "x": 428.9999999999999,
+      "y": -257,
       "fields": [
         {
           "name": "pg_uhab",
@@ -336,15 +351,365 @@
           "id": 6,
           "size": "",
           "values": []
+        },
+        {
+          "name": "unidad_cuota_id",
+          "type": "TINYINT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "id": 7,
+          "size": "",
+          "values": []
+        },
+        {
+          "name": "pg_tipo",
+          "type": "CHAR",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "id": 8,
+          "size": 1
+        },
+        {
+          "name": "proyecto_id",
+          "type": "TINYINT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "id": 9,
+          "size": "",
+          "values": []
         }
       ],
       "comment": "",
       "indices": [],
       "color": "#175e7a",
       "key": 1736029121115
+    },
+    {
+      "id": 4,
+      "name": "CUOTAS",
+      "x": 324,
+      "y": -406,
+      "fields": [
+        {
+          "name": "cuota_id",
+          "type": "TINYINT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "id": 0,
+          "size": "",
+          "values": []
+        },
+        {
+          "name": "cuota_monto",
+          "type": "DOUBLE",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "id": 1
+        }
+      ],
+      "comment": "",
+      "indices": [],
+      "color": "#175e7a",
+      "key": 1736203512897
+    },
+    {
+      "id": 5,
+      "name": "UNIDAD_CUOTA",
+      "x": 0,
+      "y": 0,
+      "fields": [
+        {
+          "name": "unidad_cuota_id",
+          "type": "TINYINT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "id": 0,
+          "size": "",
+          "values": []
+        },
+        {
+          "name": "coto_id",
+          "type": "TINYINT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "id": 1,
+          "size": "",
+          "values": []
+        },
+        {
+          "name": "uhab_id",
+          "type": "TINYINT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "id": 2,
+          "size": "",
+          "values": []
+        },
+        {
+          "name": "cuota_id",
+          "type": "TINYINT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "id": 3,
+          "size": "",
+          "values": []
+        }
+      ],
+      "comment": "",
+      "indices": [],
+      "color": "#175e7a",
+      "key": 1736203609011
+    },
+    {
+      "id": 6,
+      "name": "PROYECTOS",
+      "x": -75.99999999999977,
+      "y": 291.0000000000001,
+      "fields": [
+        {
+          "name": "proyecto_id",
+          "type": "TINYINT",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": true,
+          "increment": true,
+          "comment": "",
+          "id": 0,
+          "size": "",
+          "values": []
+        },
+        {
+          "name": "proyecto_nombre",
+          "type": "VARCHAR",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "id": 1,
+          "size": 255,
+          "values": []
+        },
+        {
+          "name": "proyecto_costo",
+          "type": "DOUBLE",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "id": 2
+        },
+        {
+          "name": "proyecto_cargos",
+          "type": "DOUBLE",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "id": 3
+        },
+        {
+          "name": "proyectos_abono",
+          "type": "DOUBLE",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "id": 4
+        },
+        {
+          "name": "proyecto_status",
+          "type": "CHAR",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "id": 5,
+          "size": 1
+        },
+        {
+          "name": "uhab_id",
+          "type": "TINYINT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "id": 6,
+          "size": "",
+          "values": []
+        }
+      ],
+      "comment": "",
+      "indices": [],
+      "color": "#175e7a",
+      "key": 1736204020671
     }
   ],
-  "relationships": [],
+  "relationships": [
+    {
+      "startTableId": 0,
+      "startFieldId": 0,
+      "endTableId": 1,
+      "endFieldId": 5,
+      "cardinality": "one_to_many",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "name": "COTOS_coto_id_fk",
+      "id": 0
+    },
+    {
+      "startTableId": 0,
+      "startFieldId": 0,
+      "endTableId": 2,
+      "endFieldId": 3,
+      "cardinality": "one_to_one",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "name": "COTOS_coto_id_fk",
+      "id": 1
+    },
+    {
+      "startTableId": 1,
+      "startFieldId": 0,
+      "endTableId": 2,
+      "endFieldId": 2,
+      "cardinality": "one_to_one",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "name": "UNIDAD_HAB_uhab_id_fk",
+      "id": 2
+    },
+    {
+      "startTableId": 5,
+      "startFieldId": 1,
+      "endTableId": 0,
+      "endFieldId": 0,
+      "cardinality": "one_to_one",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "name": "UNIDAD_CUOTA_coto_id_fk",
+      "id": 3
+    },
+    {
+      "startTableId": 5,
+      "startFieldId": 2,
+      "endTableId": 1,
+      "endFieldId": 0,
+      "cardinality": "one_to_one",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "name": "UNIDAD_CUOTA_uhab_id_fk",
+      "id": 4
+    },
+    {
+      "startTableId": 5,
+      "startFieldId": 3,
+      "endTableId": 4,
+      "endFieldId": 0,
+      "cardinality": "one_to_one",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "name": "UNIDAD_CUOTA_cuota_id_fk",
+      "id": 5
+    },
+    {
+      "startTableId": 5,
+      "startFieldId": 0,
+      "endTableId": 3,
+      "endFieldId": 7,
+      "cardinality": "one_to_one",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "name": "UNIDAD_CUOTA_unidad_cuota_id_fk",
+      "id": 6
+    },
+    {
+      "startTableId": 1,
+      "startFieldId": 0,
+      "endTableId": 6,
+      "endFieldId": 6,
+      "cardinality": "one_to_one",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "name": "UNIDAD_HAB_uhab_id_fk",
+      "id": 7
+    },
+    {
+      "startTableId": 6,
+      "startFieldId": 0,
+      "endTableId": 3,
+      "endFieldId": 9,
+      "cardinality": "one_to_one",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "name": "PROYECTOS_proyecto_id_fk",
+      "id": 8
+    }
+  ],
   "notes": [],
   "subjectAreas": [],
   "database": "mariadb",
