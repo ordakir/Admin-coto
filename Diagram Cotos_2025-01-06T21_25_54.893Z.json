@@ -368,7 +368,7 @@
         },
         {
           "name": "pg_tipo",
-          "type": "CHAR",
+          "type": "TINYINT",
           "default": "",
           "check": "",
           "primary": false,
@@ -377,7 +377,8 @@
           "increment": false,
           "comment": "",
           "id": 8,
-          "size": 1
+          "size": "",
+          "values": []
         },
         {
           "name": "proyecto_id",
@@ -390,6 +391,20 @@
           "increment": false,
           "comment": "",
           "id": 9,
+          "size": "",
+          "values": []
+        },
+        {
+          "name": "hora",
+          "type": "TIME",
+          "default": "now()",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "id": 10,
           "size": "",
           "values": []
         }
@@ -607,6 +622,45 @@
       "indices": [],
       "color": "#175e7a",
       "key": 1736204020671
+    },
+    {
+      "id": 7,
+      "name": "TIPO_PAGO",
+      "x": 471,
+      "y": 297.00000000000006,
+      "fields": [
+        {
+          "name": "tip_pag_id",
+          "type": "TINYINT",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": true,
+          "increment": true,
+          "comment": "",
+          "id": 0,
+          "size": "",
+          "values": []
+        },
+        {
+          "name": "tip_pago_desc",
+          "type": "VARCHAR",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "id": 1,
+          "size": 255
+        }
+      ],
+      "comment": "",
+      "indices": [],
+      "color": "#175e7a",
+      "key": 1736204442982
     }
   ],
   "relationships": [
@@ -708,6 +762,17 @@
       "deleteConstraint": "No action",
       "name": "PROYECTOS_proyecto_id_fk",
       "id": 8
+    },
+    {
+      "startTableId": 7,
+      "startFieldId": 0,
+      "endTableId": 3,
+      "endFieldId": 8,
+      "cardinality": "one_to_one",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "name": "TIPO_PAGO_tip_pag_id_fk",
+      "id": 9
     }
   ],
   "notes": [],
