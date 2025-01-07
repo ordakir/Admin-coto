@@ -175,12 +175,12 @@
     {
       "id": 2,
       "name": "USUARIOS",
-      "x": -651,
-      "y": 112,
+      "x": -684,
+      "y": 117,
       "fields": [
         {
           "name": "us_id",
-          "type": "INTEGER",
+          "type": "TINYINT",
           "default": "",
           "check": "",
           "primary": true,
@@ -188,7 +188,9 @@
           "notNull": true,
           "increment": false,
           "comment": "",
-          "id": 0
+          "id": 0,
+          "size": "",
+          "values": []
         },
         {
           "name": "us_nombre",
@@ -267,6 +269,20 @@
           "increment": false,
           "comment": "",
           "id": 6,
+          "size": "",
+          "values": []
+        },
+        {
+          "name": "us_admin",
+          "type": "BOOLEAN",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "id": 7,
           "size": "",
           "values": []
         }
@@ -688,6 +704,46 @@
       "indices": [],
       "color": "#175e7a",
       "key": 1736204442982
+    },
+    {
+      "id": 8,
+      "name": "USUARIOS_UHAB",
+      "x": -343,
+      "y": 287.99999999999994,
+      "fields": [
+        {
+          "name": "us_id",
+          "type": "TINYINT",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": true,
+          "increment": true,
+          "comment": "",
+          "id": 0,
+          "size": "",
+          "values": []
+        },
+        {
+          "name": "uhab_id",
+          "type": "TINYINT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "id": 1,
+          "size": "",
+          "values": []
+        }
+      ],
+      "comment": "",
+      "indices": [],
+      "color": "#175e7a",
+      "key": 1736211446922
     }
   ],
   "relationships": [
@@ -800,6 +856,28 @@
       "deleteConstraint": "No action",
       "name": "TIPO_PAGO_tip_pag_id_fk",
       "id": 9
+    },
+    {
+      "startTableId": 2,
+      "startFieldId": 0,
+      "endTableId": 8,
+      "endFieldId": 0,
+      "cardinality": "one_to_one",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "name": "USUARIOS_us_id_fk",
+      "id": 10
+    },
+    {
+      "startTableId": 8,
+      "startFieldId": 1,
+      "endTableId": 1,
+      "endFieldId": 0,
+      "cardinality": "one_to_many",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "name": "USUARIOS_UHAB_uhab_id_fk",
+      "id": 11
     }
   ],
   "notes": [],
